@@ -1,8 +1,11 @@
+/* Reset padding and margin */
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
+/* Body Styling */
 body {
     display: flex;
     flex-direction: column;
@@ -10,14 +13,18 @@ body {
     align-items: center;
     position: relative;
     min-height: 100vh;
-    font-family: Hack, monospace;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    background: linear-gradient(135deg, #f0f0f0, #d0d0f5); /* Gradient background */
+    color: #333;
 }
 
+/* Styling for main div */
 div {
     color: #727272;
     text-align: center;
 }
 
+/* Header Text */
 p {
     margin: 16px;
     font-size: 96px;
@@ -26,6 +33,7 @@ p {
     font-weight: 600;
     transition: all 1s ease-in-out;
     position: relative;
+    letter-spacing: 0.1em; /* Add space between letters */
 }
 
 p::before {
@@ -45,29 +53,35 @@ p:hover::before {
     width: 100%;
 }
 
+/* Navbar Styling */
 nav {
     margin: 25px;
-    background: #f9f9f9;
+    background: rgba(255, 255, 255, 0.9);
     padding: 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menuItems {
     list-style: none;
     display: flex;
+    justify-content: center;
 }
 
 .menuItems li {
-    margin: 50px;
+    margin: 0 50px;
 }
 
 .menuItems li a {
     text-decoration: none;
     color: #8f8f8f;
     font-size: 24px;
-    font-weight: 400;
+    font-weight: 500;
+    text-transform: uppercase;
     transition: all 0.5s ease-in-out;
     position: relative;
-    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 8px;
 }
 
 .menuItems li a::before {
@@ -83,11 +97,111 @@ nav {
     overflow: hidden;
 }
 
+.menuItems li a:hover {
+    color: #fff;
+    background-color: #8254ff; /* Background on hover */
+    box-shadow: 0px 4px 10px rgba(130, 84, 255, 0.4); /* Glow effect */
+}
+
 .menuItems li a:hover::before {
     width: 100%;
     transition: all 0.5s ease-in-out;
 }
 
+/* Form Section */
+.form-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Styling */
+.dropdown-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 2px solid #8254ff;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+select:hover {
+    border-color: #8254ff;
+    background-color: #fff;
+}
+
+.submit-container {
+    text-align: center;
+    width: 100%;
+}
+
+.submit-btn {
+    position: relative;
+    padding: 12px 24px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #8254ff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+/* Add the animation to the button text */
+.submit-btn::before {
+    content: 'Submit'; /* Same text as the button */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    color: #fff;
+    background-color: transparent;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    text-align: center;
+    line-height: 42px; /* Adjust to match the button's height */
+}
+
+.submit-btn:hover::before {
+    width: 100%; /* Expand on hover */
+    background-color: transparent;
+}
+
+.submit-btn:hover {
+    background-color: #683ab7; /* Change button background on hover */
+    box-shadow: 0 4px 10px rgba(130, 84, 255, 0.4); /* Glow effect on hover */
+}
+
+/* Footer Styling */
 footer {
     position: absolute;
     font-size: 12px;
@@ -95,18 +209,43 @@ footer {
     width: 100%;
     height: 60px;
     line-height: 60px;
-    font-size: 14px;
     background-color: #f1f1f1;
-    color: #000000;
+    color: #000;
     text-align: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 footer a {
     text-decoration: none;
     color: inherit;
     border-bottom: 1px solid;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
     border-bottom: 1px transparent;
+    color: #8254ff; /* Color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    p {
+        font-size: 48px;
+    }
+
+    .menuItems li {
+        margin: 0 20px;
+    }
+
+    .menuItems li a {
+        font-size: 18px;
+    }
+
+    .form-section {
+        width: 90%;
+    }
+
+    .submit-btn {
+        font-size: 14px;
+    }
 }

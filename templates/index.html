@@ -10,38 +10,27 @@
     <div>Welcome to Yolo Expert</div>
     <p data-item='Yolo'>Yolo</p>
     
-    <!-- <section>
-      <div>Real time example, Navbar:</div>
-      <nav>
-        <ul class="menuItems">
-          <li><a href='#' data-item='Home'>Home</a></li>
-          <li><a href='#' data-item='About'>About</a></li>
-          <li><a href='#' data-item='Projects'>Projects</a></li>
-          <li><a href='#' data-item='Blog'>Blog</a></li>
-          <li><a href='#' data-item='Contact'>Contact</a></li>
-        </ul>
-      </nav>
-    </section> -->
-
     <!-- New section with dropdowns and submit button -->
     <section class="form-section">
-        <div class="dropdown-container">
-            <label for="model-select">Select Model Name</label>
-            <select id="model-select">
-                <option value="yolov3">Yolo v3</option>
-                <option value="yolov4">Yolo v4</option>
-                <option value="yolov5">Yolo v5</option>
-                <option value="yolov7">Yolo v7</option>
-                <option value="yolov8">Yolo v8</option>
-            </select>
-        </div>
+        <div class="dropdown-row">
+            <div class="dropdown-container">
+                <label for="model-select">Select Model Name</label>
+                <select id="model-select">
+                    <option value="yolov3">Yolo v3</option>
+                    <option value="yolov4">Yolo v4</option>
+                    <option value="yolov5">Yolo v5</option>
+                    <option value="yolov7">Yolo v7</option>
+                    <option value="yolov8">Yolo v8</option>
+                </select>
+            </div>
 
-        <div class="dropdown-container">
-            <label for="input-type-select">Select Input Type</label>
-            <select id="input-type-select">
-                <option value="camera">Camera Feed</option>
-                <option value="video">Custom Video</option>
-            </select>
+            <div class="dropdown-container">
+                <label for="input-type-select">Select Input Type</label>
+                <select id="input-type-select">
+                    <option value="camera">Camera Feed</option>
+                    <option value="video">Custom Video</option>
+                </select>
+            </div>
         </div>
 
         <div class="submit-container">

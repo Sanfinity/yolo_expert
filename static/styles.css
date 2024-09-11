@@ -3,6 +3,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Body Styling */
@@ -120,39 +121,37 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Dropdown Styling */
+/* Flexbox layout for dropdown containers */
 .dropdown-container {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    width: 100%;
+    align-items: center;
+    margin-bottom: 15px; /* Adjust the space between rows */
 }
 
-label {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 8px;
-    color: #333;
-}
-
-select {
-    padding: 10px 15px;
+.dropdown-container label {
+    flex: 1;
+    margin-right: 10px;
     font-size: 16px;
-    border-radius: 8px;
-    border: 2px solid #8254ff;
-    background-color: #f9f9f9;
-    color: #333;
+}
+
+.dropdown-container select {
+    flex: 2;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
     outline: none;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-select:hover {
-    border-color: #8254ff;
+    color: #333;
     background-color: #fff;
+    transition: border-color 0.3s;
 }
 
+.dropdown-container select:hover,
+.dropdown-container select:focus {
+    border-color: #8254ff; /* Match with the theme color */
+}
+
+/* Submit Button Styling */
 .submit-container {
     text-align: center;
     width: 100%;
@@ -160,46 +159,51 @@ select:hover {
 
 .submit-btn {
     position: relative;
-    padding: 12px 24px;
+    padding: 1px 24px;
     font-size: 16px;
-    color: #fff;
-    background-color: #8254ff;
-    border: none;
+    color: #ccc; /* Initial button text color (same as Yolo) */
+    background-color: transparent; /* No background initially */
+    border: 2px solid #8254ff; /* Border similar to Yolo */
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease-in-out;
     width: 100%;
     font-weight: 600;
     text-transform: uppercase;
     overflow: hidden;
+    letter-spacing: 0.1em;
+    height: 50px;
+    line-height: 50px; /* Ensures vertical centering of text */
 }
 
 /* Add the animation to the button text */
 .submit-btn::before {
     content: 'Submit'; /* Same text as the button */
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 100%; /* Initially place the pseudo-element outside the button, below */
     left: 0;
     right: 0;
-    width: 0;
-    color: #fff;
-    background-color: transparent;
-    transition: all 0.5s ease;
+    height: 100%; /* Covers the entire height of the button */
+    color: #8254ff; /* Color of the animated text */
+    background-color: #8254ff;
+    transition: all 0.5s ease-in-out;
     overflow: hidden;
     text-align: center;
-    line-height: 42px; /* Adjust to match the button's height */
+    line-height: 50px; /* Matches the button's height for alignment */
+    z-index: -1; /* Puts the background behind the actual text */
 }
 
+/* Hover effect */
 .submit-btn:hover::before {
-    width: 100%; /* Expand on hover */
-    background-color: transparent;
+    top: 0; /* Moves the violet color from bottom to top */
 }
 
 .submit-btn:hover {
-    background-color: #683ab7; /* Change button background on hover */
-    box-shadow: 0 4px 10px rgba(130, 84, 255, 0.4); /* Glow effect on hover */
+    color: #8254ff; /* Text color changes to white when hovered */
+    background-color: transparent; /* Keep background transparent */
+    box-shadow: none;
 }
+
 
 /* Footer Styling */
 footer {
@@ -228,7 +232,7 @@ footer a:hover {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     p {
         font-size: 48px;
     }
